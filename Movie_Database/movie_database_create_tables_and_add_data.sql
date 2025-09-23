@@ -45,3 +45,9 @@ CREATE TABLE movie_cast (
     CONSTRAINT fk_mc_act FOREIGN KEY(act_id) REFERENCES actor(act_id),
     CONSTRAINT fk_mc_mov FOREIGN KEY(mov_id) REFERENCES movie(mov_id)
 );
+CREATE TABLE movie_genres (
+    mov_id INTEGER,
+    gen_id INTEGER,
+    CONSTRAINT fk_mg_mov FOREIGN KEY(mov_id) REFERENCES movie(mov_id),
+    CONSTRAINT fk_mg_gen FOREIGN KEY(gen_id) REFERENCES genres(gen_id)
+);
