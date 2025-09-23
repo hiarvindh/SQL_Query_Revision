@@ -51,3 +51,11 @@ CREATE TABLE movie_genres (
     CONSTRAINT fk_mg_mov FOREIGN KEY(mov_id) REFERENCES movie(mov_id),
     CONSTRAINT fk_mg_gen FOREIGN KEY(gen_id) REFERENCES genres(gen_id)
 );
+CREATE TABLE rating (
+    mov_id INTEGER,
+    rev_id INTEGER,
+    rev_stars INTEGER,
+    num_o_ratings INTEGER,
+    CONSTRAINT fk_r_mov FOREIGN KEY(mov_id) REFERENCES movie(mov_id),
+    CONSTRAINT fk_r_rev FOREIGN KEY(rev_id) REFERENCES reviewer(rev_id)
+);
