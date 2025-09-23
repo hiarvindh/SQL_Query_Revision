@@ -84,3 +84,17 @@ INSERT INTO actor VALUES
     (122, 'Sigourney', 'Weaver', 'F'),
     (123, 'David', 'Aston', 'M'),
     (124, 'Ali', 'Astin', 'F');
+INSERT INTO genres VALUES
+    (1001, 'Action'),
+    (1002, 'Adventure'),
+    (1003, 'Animation'),
+    (1004, 'Biography'),
+    (1005, 'Comedy'),
+    (1006, 'Crime'),
+    (1007, 'Drama'),
+    (1008, 'Horror'),
+    (1009, 'Music'),
+    (1010, 'Mystery'),
+    (1011, 'Romance'),
+    (1012, 'Thriller'),
+    (1013, 'War'); 
