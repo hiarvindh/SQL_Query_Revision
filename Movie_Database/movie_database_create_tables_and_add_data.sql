@@ -38,3 +38,10 @@ CREATE TABLE movie_direction (
     CONSTRAINT fk_md_director FOREIGN KEY(dir_id) REFERENCES director(dir_id),
     CONSTRAINT fk_m_director FOREIGN KEY(mov_id) REFERENCES movie(mov_id)
 );
+CREATE TABLE movie_cast (
+    act_id INTEGER,
+    mov_id INTEGER,
+    role CHAR(30),
+    CONSTRAINT fk_mc_act FOREIGN KEY(act_id) REFERENCES actor(act_id),
+    CONSTRAINT fk_mc_mov FOREIGN KEY(mov_id) REFERENCES movie(mov_id)
+);
