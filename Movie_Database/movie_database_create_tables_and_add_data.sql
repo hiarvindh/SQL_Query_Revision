@@ -12,3 +12,12 @@ CREATE TABLE director (
     dir_lname CHAR(20),
     CONSTRAINT pk_director PRIMARY KEY(dir_id)
 );
+CREATE TABLE movie (
+    mov_id INTEGER NOT NULL,
+    mov_title CHAR(50),
+    mov_year INTEGER,
+    mov_time INTEGER,
+    mov_lang CHAR(50),
+    mov_dt_rel DATE,
+    mov_rel_country CHAR(5)
+);
