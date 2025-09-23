@@ -32,3 +32,9 @@ CREATE TABLE genres (
     gen_title CHAR(20),
     CONSTRAINT pk_genres PRIMARY KEY(gen_id)
 );
+CREATE TABLE movie_direction (
+    dir_id INTEGER,
+    mov_id INTEGER,
+    CONSTRAINT fk_md_director FOREIGN KEY(dir_id) REFERENCES director(dir_id),
+    CONSTRAINT fk_m_director FOREIGN KEY(mov_id) REFERENCES movie(mov_id)
+);
