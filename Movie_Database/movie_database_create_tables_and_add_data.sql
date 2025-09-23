@@ -27,3 +27,8 @@ CREATE TABLE reviewer (
     rev_name CHAR(30),
     CONSTRAINT pk_reviewer PRIMARY KEY(rev_id)
 );
+CREATE TABLE genres (
+    gen_id INTEGER NOT NULL,
+    gen_title CHAR(20),
+    CONSTRAINT pk_genres PRIMARY KEY(gen_id)
+);
