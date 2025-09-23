@@ -19,5 +19,6 @@ CREATE TABLE movie (
     mov_time INTEGER,
     mov_lang CHAR(50),
     mov_dt_rel DATE,
-    mov_rel_country CHAR(5)
+    mov_rel_country CHAR(5),
+    CONSTRAINT pk_movie PRIMARY KEY(mov_id)
 );
