@@ -22,3 +22,8 @@ CREATE TABLE movie (
     mov_rel_country CHAR(5),
     CONSTRAINT pk_movie PRIMARY KEY(mov_id)
 );
+CREATE TABLE reviewer (
+    rev_id INTEGER NOT NULL,
+    rev_name CHAR(30),
+    CONSTRAINT pk_reviewer PRIMARY KEY(rev_id)
+);
