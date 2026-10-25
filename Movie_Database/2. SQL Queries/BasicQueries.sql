@@ -10,7 +10,9 @@ FROM movie;
 2. From the following table, write a SQL query to find when the movie 'American Beauty' released. Return movie release year.
 Table References: movie
 */
-
+SELECT mov_year
+FROM movie
+WHERE mov_title = 'American Beauty';
 
 /*
 3. From the following table, write a SQL query to find the movie that was released in 1999. Return movie title.
