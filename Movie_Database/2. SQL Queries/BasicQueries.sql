@@ -34,7 +34,11 @@ WHERE mov_year < 1998;
 5. From the following tables, write a SQL query to find the name of all reviewers and movies together in a single list.
 Table References: movie, reviewer
 */
-
+SELECT r.rev_name
+FROM reviewer r
+UNION
+SELECT m.mov_title
+FROM movie m;
 
 /*
 6. From the following table, write a SQL query to find all reviewers who have rated seven or more stars to their rating. Return reviewer name.
