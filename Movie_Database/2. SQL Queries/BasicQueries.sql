@@ -54,7 +54,12 @@ WHERE r.rev_stars >= 7 AND re.rev_name IS NOT NULL;
 7. From the following tables, write a SQL query to find the movies without any rating. Return movie title.
 Table References: movie, rating
 */
-
+SELECT m.mov_title
+FROM movie m
+WHERE mov_id NOT IN (
+	SELECT mov_id
+    FROM rating
+);
 
 /*
 8. From the following table, write a SQL query to find the movies with ID 905 or 907 or 917. Return movie title.
