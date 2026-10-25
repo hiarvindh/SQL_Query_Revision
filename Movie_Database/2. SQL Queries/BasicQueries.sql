@@ -3,7 +3,8 @@ USE movie_database;
 1. From the following table, write a SQL query to find the name and year of the movies. Return movie title, movie release year.
 Table References: movie
 */
-
+SELECT mov_title, mov_year
+FROM movie;
 
 /*
 2. From the following table, write a SQL query to find when the movie 'American Beauty' released. Return movie release year.
