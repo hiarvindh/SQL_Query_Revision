@@ -18,7 +18,9 @@ WHERE mov_title = 'American Beauty';
 3. From the following table, write a SQL query to find the movie that was released in 1999. Return movie title.
 Table References: movie
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_year = 1999;
 
 /*
 4. From the following table, write a SQL query to find those movies, which were released before 1998. Return movie title.
