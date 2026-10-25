@@ -1,4 +1,4 @@
-DROP TABLES IF EXISTS actor, director, movie_direction, movie_cast, movie, reviewer, genres, movie_genres, rating;
+DROP TABLE IF EXISTS actor, director, movie_direction, movie_cast, movie, reviewer, genres, movie_genres, rating;
 CREATE TABLE actor (
     act_id INTEGER NOT NULL,
     act_fname CHAR(20),
