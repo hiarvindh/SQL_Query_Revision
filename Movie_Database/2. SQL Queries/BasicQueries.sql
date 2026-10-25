@@ -44,7 +44,11 @@ FROM movie m;
 6. From the following table, write a SQL query to find all reviewers who have rated seven or more stars to their rating. Return reviewer name.
 Table References: reviewer, rating
 */
-
+SELECT re.rev_name
+FROM reviewer re
+JOIN rating r
+ON re.rev_id = r.rev_id
+WHERE r.rev_stars >= 7 AND re.rev_name IS NOT NULL;
 
 /*
 7. From the following tables, write a SQL query to find the movies without any rating. Return movie title.
