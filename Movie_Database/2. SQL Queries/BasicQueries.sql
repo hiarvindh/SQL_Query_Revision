@@ -1,3 +1,4 @@
+USE movie_database;
 /*
 1. From the following table, write a SQL query to find the name and year of the movies. Return movie title, movie release year.
 Table References: movie

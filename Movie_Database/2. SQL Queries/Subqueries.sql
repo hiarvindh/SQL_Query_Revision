@@ -1,3 +1,4 @@
+USE movie_database;
 /*
 1. Write a SQL query to find the actors who played a role in the movie 'Annie Hall'.
    Return all the fields of actor table.

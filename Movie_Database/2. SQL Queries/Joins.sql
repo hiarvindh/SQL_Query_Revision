@@ -1,3 +1,4 @@
+USE movie_database;
 /*
 1. From the following tables, write a SQL query to find all reviewers whose ratings contain
    a NULL value. Return reviewer name.
