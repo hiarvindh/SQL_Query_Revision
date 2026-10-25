@@ -26,7 +26,9 @@ WHERE mov_year = 1999;
 4. From the following table, write a SQL query to find those movies, which were released before 1998. Return movie title.
 Table References: movie
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_year < 1998;
 
 /*
 5. From the following tables, write a SQL query to find the name of all reviewers and movies together in a single list.
