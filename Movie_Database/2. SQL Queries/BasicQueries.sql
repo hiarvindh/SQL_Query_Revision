@@ -65,7 +65,9 @@ WHERE mov_id NOT IN (
 8. From the following table, write a SQL query to find the movies with ID 905 or 907 or 917. Return movie title.
 Table references: movie
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_id IN (905, 907, 917);
 
 /*
 9. From the following table, write a SQL query to find the movie titles that contain the word 'Boogie Nights'. Sort the result-set in ascending order by movie year. Return movie ID, movie title and movie release year.
