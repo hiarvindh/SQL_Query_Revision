@@ -124,7 +124,11 @@ ORDER BY mov_dt_rel DESC;
     of movies for each genre.
 Table References: movie, genres, movie_genres
 */
-
+SELECT gen_title, AVG(mov_time), COUNT(gen_title)
+FROM movie
+NATURAL JOIN movie_genres
+NATURAL JOIN genres
+GROUP BY gen_title;
 
 /*
 11. From the following tables, write a SQL query to find movies with the shortest duration.
