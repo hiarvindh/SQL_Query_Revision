@@ -96,7 +96,12 @@ NATURAL JOIN genres;
    name of the director. 
 Table References: movie, genres, movie_genres, director, movie_direction
 */
-
+SELECT movie.mov_title, movie.mov_year, genres.gen_title, director.dir_fname, director.dir_lname
+FROM movie
+NATURAL JOIN movie_genres
+NATURAL JOIN genres
+NATURAL JOIN movie_direction
+NATURAL JOIN director;
 
 /*
 9. From the following tables, write a SQL query to find the movies released before 1st
