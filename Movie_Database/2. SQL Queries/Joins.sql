@@ -4,7 +4,10 @@ USE movie_database;
    a NULL value. Return reviewer name.
 Table References: reviewer, rating
 */
-
+SELECT r.rev_name
+FROM reviewer r
+INNER JOIN rating USING(rev_id)
+WHERE rev_stars IS NULL;
 
 /*
 2. From the following tables, write a SQL query to find out who was cast in the movie
