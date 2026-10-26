@@ -101,6 +101,7 @@ WHERE mov_id IN (
     FROM movie
     WHERE mov_id NOT IN (
 		SELECT mov_id
+        FROM rating
 	)
 );
 
