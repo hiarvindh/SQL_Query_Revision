@@ -42,7 +42,9 @@ WHERE dir_id IN (
    and date of release, releasing country.
 Table References: movie
 */
-
+SELECT mov_title, mov_year, mov_time, mov_dt_rel AS date_of_release, mov_rel_country AS releasing_country
+FROM movie
+WHERE mov_rel_country NOT IN ('UK');
 
 /*
 4. From the following tables, write a SQL query to find for movies whose reviewer is unknown.
