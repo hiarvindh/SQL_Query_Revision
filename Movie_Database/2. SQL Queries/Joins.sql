@@ -27,7 +27,15 @@ ON movie_cast.mov_id = movie.mov_id AND movie.mov_title = 'Annie Hall';
    movie title.
 Table References: director, movie_direction, movie_cast, movie
 */
-
+SELECT d.dir_fname, d.dir_lname, m.mov_title
+FROM director d
+JOIN movie_direction md
+ON d.dir_id = md.dir_id
+JOIN movie m
+ON m.mov_id = md.mov_id
+JOIN movie_cast mc
+ON m.mov_id = mc.mov_id
+WHERE m.mov_title = 'Eyes Wide Shut';
 
 /*
 4. From the following tables, write a SQL query to find the director of a movie that cast
