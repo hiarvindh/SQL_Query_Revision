@@ -135,7 +135,11 @@ ORDER BY rev_name, mov_title, rev_stars;
     Return reviewer’s name, movie title.
 Table References: reviewer, rating, movie
 */
-
+SELECT rev_name, mov_title 
+FROM reviewer, movie, rating, rating r2
+WHERE rating.mov_id = movie.mov_id AND reviewer.rev_id = rating.rev_ID AND rating.rev_id = r2.rev_id 
+GROUP BY rev_name, mov_title 
+HAVING count(*) > 1;
 
 /*
 11. From the following tables, write a SQL query to find those movies, which have received
