@@ -21,7 +21,20 @@ WHERE act_id IN (
    a role in 'Eyes Wide Shut'. Return director first name, last name.
 Table References: director, movie_direction, movie, movie_cast
 */
-
+SELECT dir_fname, dir_lname
+FROM director
+WHERE dir_id IN (
+	SELECT dir_id
+    FROM movie_direction
+    WHERE mov_id IN (
+		SELECT mov_id
+        FROM movie
+        WHERE mov_title = 'Eyes Wide Shut' and mov_id IN (
+			SELECT mov_id
+            FROM movie_cast
+		)
+	)
+);
 
 /*
 3. From the following table, write a SQL query to find those movies that have been released
