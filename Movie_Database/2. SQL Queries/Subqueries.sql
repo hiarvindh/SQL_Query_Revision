@@ -52,7 +52,10 @@ WHERE mov_rel_country NOT IN ('UK');
    actor first name, last name.
 Table References: movie, actor, director, movie_direction, movie_cast, reviewer, rating
 */
-
+SELECT mov_title, mov_year, mov_dt_rel, dir_fname, dir_lname, 
+       act_fname, act_lname
+FROM movie a, movie_direction b, director c, rating d, reviewer e, actor f, movie_cast g
+WHERE a.mov_id=b.mov_id AND b.dir_id=c.dir_id AND a.mov_id=d.mov_id AND d.rev_id=e.rev_id AND a.mov_id=g.mov_id AND g.act_id=f.act_id AND e.rev_name IS NULL;
 
 /*
 5. From the following tables, write a SQL query to find those movies directed by the director
