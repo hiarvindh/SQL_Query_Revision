@@ -136,7 +136,13 @@ GROUP BY gen_title;
     name and role.
 Table References: movie, actor, director, movie_direction, movie_cast
 */
-
+SELECT mov_title, mov_year, dir_fname, dir_lname, act_fname, act_lname, role
+FROM movie
+NATURAL JOIN movie_direction
+NATURAL JOIN movie_cast
+NATURAL JOIN director
+NATURAL JOIN actor
+WHERE mov_time = (SELECT MIN(mov_time) FROM movie);
 
 /*
 12. From the following table, write a SQL query to find the years in which a movie received
