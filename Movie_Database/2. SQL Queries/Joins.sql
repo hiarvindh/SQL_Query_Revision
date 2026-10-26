@@ -109,7 +109,14 @@ NATURAL JOIN director;
    title, release year, date of release, duration, and first and last name of the director.
 Table References: movie, director, movie_direction
 */
-
+SELECT movie.mov_title, mov_year, mov_dt_rel, mov_time, dir_fname, dir_lname
+FROM movie
+JOIN movie_direction
+ON movie.mov_id = movie_direction.mov_id
+JOIN director
+ON movie_direction.dir_id = director.dir_id
+WHERE mov_dt_rel < '1989-01-01'
+ORDER BY mov_dt_rel DESC;
 
 /*
 10. From the following tables, write a SQL query to calculate the average movie length and
