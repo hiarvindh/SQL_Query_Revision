@@ -62,7 +62,17 @@ WHERE a.mov_id=b.mov_id AND b.dir_id=c.dir_id AND a.mov_id=d.mov_id AND d.rev_id
    whose first name is Woddy and last name is Allen. Return movie title.
 Table References: movie, director, movie_direction
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM movie_direction
+    WHERE dir_id IN (
+		SELECT dir_id
+        FROM director
+        WHERE dir_fname = 'Woody' AND dir_lname = 'Allen'
+	)
+);
 
 /*
 6. From the following tables, write a SQL query to determine those years in which there was
