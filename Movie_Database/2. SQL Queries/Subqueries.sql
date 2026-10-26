@@ -4,7 +4,17 @@ USE movie_database;
    Return all the fields of actor table.
 Table References: actor, movie_cast, movie
 */
-
+SELECT *
+FROM actor
+WHERE act_id IN (
+	SELECT act_id
+    FROM movie_cast
+    WHERE mov_id IN (
+		SELECT mov_id
+        FROM movie
+        WHERE mov_title = 'Annie Hall'
+	)
+);
 
 /*
 2. From the following tables, write a SQL query to find the director of a film that cast
