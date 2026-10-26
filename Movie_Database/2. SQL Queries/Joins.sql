@@ -58,7 +58,13 @@ WHERE mc.role = 'Sean Maguire';
    first name, last name, movie title and release year.
 Table References: actor, movie_cast, movie
 */
-
+SELECT a.act_fname, a.act_lname, m.mov_title, m.mov_year
+FROM actor a
+JOIN movie_cast mc
+ON a.act_id = mc.act_id
+JOIN movie m
+ON mc.mov_id = m.mov_id
+WHERE m.mov_year NOT BETWEEN 1990 AND 2000;
 
 /*
 6. From the following tables, write a SQL query to find the directors who have directed films
