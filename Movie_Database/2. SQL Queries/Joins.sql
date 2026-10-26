@@ -73,7 +73,13 @@ WHERE m.mov_year NOT BETWEEN 1990 AND 2000;
    director first name, last name and number of genres movies.
 Table References: director, movie_direction, genres, movie_genres, movie
 */
-
+SELECT dir_fname, dir_lname, gen_title, COUNT(gen_title) AS count
+FROM director
+NATURAL JOIN movie_direction
+NATURAL JOIN movie_genres
+NATURAL JOIN genres
+GROUP BY dir_fname, dir_lname, gen_title
+ORDER BY dir_fname, dir_lname;
 
 /*
 7. From the following tables, write a SQL query to find the movies with year and genres.
