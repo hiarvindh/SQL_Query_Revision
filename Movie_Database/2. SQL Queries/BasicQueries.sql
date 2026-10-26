@@ -73,7 +73,10 @@ WHERE mov_id IN (905, 907, 917);
 9. From the following table, write a SQL query to find the movie titles that contain the word 'Boogie Nights'. Sort the result-set in ascending order by movie year. Return movie ID, movie title and movie release year.
 Table References: movie
 */
-
+SELECT mov_id, mov_title, mov_year
+FROM movie
+WHERE mov_title LIKE '%Boogie Nights%'
+ORDER BY mov_year;
 
 /*
 10. From the following table, write a SQL query to find those actors with the first name 'Woody' and the last name 'Allen'. Return actor ID.
