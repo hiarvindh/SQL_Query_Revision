@@ -159,7 +159,17 @@ ORDER BY mov_title;
     'American Beauty'. Return reviewer name.
 Table References: reviewer, rating, movie
 */
-
+SELECT DISTINCT rev_name
+FROM reviewer
+WHERE rev_id IN (
+	SELECT rev_id
+    FROM rating
+    WHERE mov_id IN (
+		SELECT mov_id
+		FROM movie
+		WHERE mov_title = 'American Beauty'
+	)
+);
 
 /*
 13. From the following table, write a SQL query to find the movies that have not been reviewed
