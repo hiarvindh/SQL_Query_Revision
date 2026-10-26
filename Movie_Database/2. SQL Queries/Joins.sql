@@ -42,7 +42,15 @@ WHERE m.mov_title = 'Eyes Wide Shut';
    a role as Sean Maguire. Return director first name, last name and movie title.
 Table References: director, movie_direction, movie_cast, movie
 */
-
+SELECT dir_fname, dir_lname, mov_title
+FROM director d
+JOIN movie_direction md
+ON md.dir_id = d.dir_id
+JOIN movie m
+ON m.mov_id = md.mov_id
+JOIN movie_cast mc
+ON mc.mov_id = m.mov_id
+WHERE mc.role = 'Sean Maguire';
 
 /*
 5. From the following tables, write a SQL query to find out which actors have not appeared
