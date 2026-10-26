@@ -92,9 +92,8 @@ NATURAL JOIN movie_genres
 NATURAL JOIN genres;
 
 /*
-8. From the following tables, write a SQL query to find all the movies with year, genres,
-   and name of the director. Return movie title, movie year, generic title, director first
-   name and last name.
+8. From the following tables, write a SQL query to find all the movies with year, genres, and 
+   name of the director. 
 Table References: movie, genres, movie_genres, director, movie_direction
 */
 
