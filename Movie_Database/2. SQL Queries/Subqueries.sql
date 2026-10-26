@@ -207,7 +207,17 @@ AND rating.mov_id = movie.mov_id;
     Return movie title.
 Table References: director, movie_direction, movie
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM movie_direction
+    WHERE dir_id IN (
+		SELECT dir_id
+        FROM director
+        WHERE dir_fname = 'James' AND dir_lname = 'Cameron'
+	)
+);
 
 /*
 16. Write a query in SQL to find the movies in which one or more actors appeared in more than
