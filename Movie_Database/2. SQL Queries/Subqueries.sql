@@ -80,7 +80,14 @@ WHERE mov_id IN (
    ascending order by movie year. Return movie year.
 Table References: movie, rating
 */
-
+SELECT DISTINCT mov_year
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM rating
+    WHERE rev_stars >= 3.0
+)
+ORDER BY mov_year;
 
 /*
 7. From the following table, write a SQL query to search for movies that do not have any
