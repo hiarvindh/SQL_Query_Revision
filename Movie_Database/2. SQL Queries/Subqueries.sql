@@ -193,7 +193,14 @@ WHERE mov_id IN (
     Return reviewer name, movie title, and number of stars for those movies.
 Table References: reviewer, rating, movie
 */
-
+SELECT reviewer.rev_name, movie.mov_title, rating.rev_stars
+FROM reviewer, movie, rating
+WHERE rating.rev_stars = (
+  SELECT MIN(rating.rev_stars)
+  FROM rating
+)
+AND rating.rev_id = reviewer.rev_id
+AND rating.mov_id = movie.mov_id;
 
 /*
 15. From the following tables, write a SQL query to find the movies directed by 'James Cameron'.
