@@ -110,7 +110,13 @@ WHERE mov_id IN (
    rating to certain films. Return reviewer name.
 Table References: reviewer, rating
 */
-
+SELECT DISTINCT rev_name 
+FROM reviewer 
+WHERE rev_id IN (
+  SELECT rev_id 
+  FROM rating 
+  WHERE rev_stars IS NULL
+);
 
 /*
 9. From the following tables, write a SQL query to find movies that have been reviewed by a
