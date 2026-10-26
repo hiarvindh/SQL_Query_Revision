@@ -86,7 +86,10 @@ ORDER BY dir_fname, dir_lname;
    Return movie title, movie year and generic title.
 Table References: movie, genres, movie_genres
 */
-
+SELECT mov_title, mov_year, gen_title
+FROM movie
+NATURAL JOIN movie_genres
+NATURAL JOIN genres;
 
 /*
 8. From the following tables, write a SQL query to find all the movies with year, genres,
