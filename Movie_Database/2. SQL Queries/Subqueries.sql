@@ -176,7 +176,17 @@ WHERE rev_id IN (
     by any reviewer body other than 'Paul Monks'. Return movie title.
 Table References: reviewer, rating, movie
 */
-
+SELECT mov_title
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM rating
+    WHERE rev_id NOT IN (
+		SELECT rev_id
+        FROM reviewer
+        WHERE rev_name = 'Paul Monks'
+	)
+);
 
 /*
 14. From the following table, write a SQL query to find the movies with the lowest ratings.
