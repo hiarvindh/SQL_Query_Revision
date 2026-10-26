@@ -94,7 +94,16 @@ ORDER BY mov_year;
    ratings. Return movie title.
 Table References: movie, rating
 */
-
+SELECT DISTINCT mov_title
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM movie
+    WHERE mov_id NOT IN (
+		SELECT mov_id
+        FROM rating
+	)
+);
 
 /*
 8. From the following table, write a SQL query to find those reviewers who have not given a
