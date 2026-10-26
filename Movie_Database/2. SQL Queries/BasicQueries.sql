@@ -82,3 +82,6 @@ ORDER BY mov_year;
 10. From the following table, write a SQL query to find those actors with the first name 'Woody' and the last name 'Allen'. Return actor ID.
 Table References: actor
 */
+SELECT act_id
+FROM actor
+WHERE act_fname = 'Woody' AND act_lname = 'Allen';
