@@ -224,3 +224,15 @@ WHERE mov_id IN (
     one film.
 Table References: movie, movie_cast
 */
+SELECT mov_title
+FROM movie
+WHERE mov_id IN (
+	SELECT mov_id
+    FROM movie_cast
+    WHERE act_id IN (
+		SELECT act_id
+        FROM movie_cast
+        GROUP BY act_id
+        HAVING COUNT(act_id) > 1
+	)
+);
