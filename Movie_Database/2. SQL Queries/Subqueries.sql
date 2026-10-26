@@ -148,7 +148,11 @@ HAVING count(*) > 1;
     stars.
 Table References: rating, movie
 */
-
+SELECT mov_title, MAX(rev_stars)
+FROM movie, rating 
+WHERE movie.mov_id = rating.mov_id AND rating.rev_stars IS NOT NULL
+GROUP BY mov_title
+ORDER BY mov_title;
 
 /*
 12. From the following tables, write a SQL query to find all reviewers who rated the movie
