@@ -177,7 +177,12 @@ ORDER BY r.rev_name, m.mov_title, t.rev_stars;
     and maximum review stars.
 Table References: movie, rating
 */
-
+SELECT mov_title, MAX(rev_stars) AS max
+FROM movie
+INNER JOIN rating USING(mov_id)
+GROUP BY mov_title
+HAVING MAX(rev_stars) > 0
+ORDER BY mov_title;
 
 /*
 15. From the following table, write a SQL query to find out which movies have received
