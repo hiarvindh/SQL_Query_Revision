@@ -325,3 +325,15 @@ GROUP BY mov_year, gen_title;
     director, date of release, and rating of that movie.
 Table References: movie, actor, movie_cast, genres, movie_genres, director, movie_direction, rating
 */
+SELECT mov_title, act_fname, act_lname, 
+mov_year, role, gen_title, dir_fname, dir_lname, 
+mov_dt_rel, rev_stars
+FROM movie 
+NATURAL JOIN movie_cast
+NATURAL JOIN actor
+NATURAL JOIN movie_genres
+NATURAL JOIN genres
+NATURAL JOIN movie_direction
+NATURAL JOIN director
+NATURAL JOIN rating
+WHERE act_gender='F';
