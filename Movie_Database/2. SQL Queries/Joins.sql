@@ -162,7 +162,14 @@ ORDER BY mov_year;
     number of stars. Return reviewer name, movie title, review stars.
 Table References: movie, rating, reviewer
 */
-
+SELECT r.rev_name, m.mov_title, t.rev_stars
+FROM movie m
+JOIN rating t 
+ON m.mov_id = t.mov_id
+JOIN reviewer r 
+ON t.rev_id = r.rev_id
+WHERE r.rev_name IS NOT NULL
+ORDER BY r.rev_name, m.mov_title, t.rev_stars;
 
 /*
 14. From the following table, write a SQL query to find those movies that have at least one
