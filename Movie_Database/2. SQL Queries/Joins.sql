@@ -311,7 +311,13 @@ WHERE gen_title = 'Mystery' AND rev_stars >= ALL (
     title, number of generic title and average rating.
 Table References: movie, genres, movie_genres, rating
 */
-
+SELECT mov_year, gen_title, COUNT(gen_title), AVG(rev_stars)
+FROM movie
+NATURAL JOIN movie_genres
+NATURAL JOIN genres
+NATURAL JOIN rating
+WHERE gen_title = 'Mystery'
+GROUP BY mov_year, gen_title;
 
 /*
 24. From the following tables, write a query in SQL to generate a report, which contain the
