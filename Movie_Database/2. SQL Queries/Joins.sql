@@ -189,7 +189,12 @@ ORDER BY mov_title;
     ratings. Return movie title, director first name, director last name and review stars.
 Table References: movie, rating, movie_direction, director
 */
-
+SELECT movie.mov_title, director.dir_fname, director.dir_lname, rating.rev_stars
+FROM movie
+JOIN movie_direction USING(mov_id)
+JOIN director USING(dir_id)
+LEFT JOIN rating USING(mov_id)
+WHERE rev_stars IS NOT NULL;
 
 /*
 16. From the following table, write a SQL query to find movies in which one or more actors
