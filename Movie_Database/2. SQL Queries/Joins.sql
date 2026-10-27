@@ -149,7 +149,12 @@ WHERE mov_time = (SELECT MIN(mov_time) FROM movie);
     a rating of 3 or 4. Sort the result in increasing order on movie year. Return movie year.
 Table References: movie, rating
 */
-
+SELECT DISTINCT mov_year
+FROM movie
+JOIN rating
+ON movie.mov_id = rating.mov_id
+WHERE rev_stars = 3 OR rev_stars = 4
+ORDER BY mov_year;
 
 /*
 13. From the following tables, write a SQL query to get the reviewer name, movie title, and
