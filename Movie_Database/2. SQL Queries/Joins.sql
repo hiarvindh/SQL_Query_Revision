@@ -278,7 +278,13 @@ WHERE actor.act_fname = 'Harrison' AND actor.act_lname = 'Ford';
     movie title, movie year, review stars and releasing country.
 Table References: movie, rating
 */
-
+SELECT mov_title, mov_year, rev_stars, mov_rel_country
+FROM movie
+NATURAL JOIN rating
+WHERE rev_stars = (
+	SELECT MAX(rev_stars)
+    FROM rating
+);
 
 /*
 22. From the following tables, write a SQL query to find the highest-rated 'Mystery Movies'.
