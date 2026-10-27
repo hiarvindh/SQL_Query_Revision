@@ -202,6 +202,18 @@ WHERE rev_stars IS NOT NULL;
     the role.
 Table References: movie, actor, movie_cast
 */
+SELECT movie.mov_title, actor.act_fname, actor.act_lname, movie_cast.role
+FROM movie
+JOIN movie_cast
+ON movie_cast.mov_id = movie.mov_id
+JOIN actor
+ON movie_cast.act_id = actor.act_id
+WHERE actor.act_id IN (
+	SELECT act_id
+    FROM movie_cast
+    GROUP BY act_id
+    HAVING COUNT(*) >= 2
+);
 
 
 /*
