@@ -252,7 +252,13 @@ WHERE a.act_fname = d.dir_fname AND a.act_lname = d.dir_lname;
     'Chinatown'. Return first name, last name.
 Table References: movie, movie_cast, actor
 */
-
+SELECT actor.act_fname, actor.act_lname
+FROM actor
+JOIN movie_cast
+ON actor.act_id = movie_cast.act_id
+JOIN movie
+ON movie.mov_id = movie_cast.mov_id
+WHERE movie.mov_title = 'Chinatown';
 
 /*
 20. From the following tables, write a SQL query to find those movies where actor's first
