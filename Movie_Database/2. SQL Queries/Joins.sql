@@ -265,7 +265,13 @@ WHERE movie.mov_title = 'Chinatown';
     name is 'Harrison' and last name is 'Ford'. Return movie title.
 Table References: movie, movie_cast, actor
 */
-
+SELECT movie.mov_title
+FROM movie
+JOIN movie_cast
+ON movie.mov_id = movie_cast.mov_id
+JOIN actor
+ON actor.act_id = movie_cast.act_id
+WHERE actor.act_fname = 'Harrison' AND actor.act_lname = 'Ford';
 
 /*
 21. From the following tables, write a SQL query to find the highest-rated movies. Return
