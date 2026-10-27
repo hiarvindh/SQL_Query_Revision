@@ -239,7 +239,13 @@ WHERE actor.act_fname = 'Claire' AND actor.act_lname = 'Danes';
     directed by them. Return actor first name, last name, movie title and role.
 Table References: actor, movie_cast, director, movie_direction, movie
 */
-
+SELECT a.act_fname, a.act_lname, m.mov_title, mc.role
+FROM actor a
+JOIN movie_cast mc ON a.act_id = mc.act_id
+JOIN movie m ON mc.mov_id = m.mov_id
+JOIN movie_direction md ON m.mov_id = md.mov_id
+JOIN director d ON md.dir_id = d.dir_id
+WHERE a.act_fname = d.dir_fname AND a.act_lname = d.dir_lname;
 
 /*
 19. From the following tables, write a SQL query to find the cast list of the movie
