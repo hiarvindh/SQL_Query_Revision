@@ -222,7 +222,17 @@ WHERE actor.act_id IN (
     actor first name and last name, role.
 Table References: movie, movie_cast, actor, director, movie_direction
 */
-
+SELECT director.dir_fname, director.dir_lname, movie.mov_title, actor.act_fname, actor.act_lname, movie_cast.role
+FROM director
+JOIN movie_direction
+ON director.dir_id = movie_direction.dir_id
+JOIN movie
+ON movie_direction.mov_id = movie.mov_id
+JOIN movie_cast
+ON movie.mov_id = movie_cast.mov_id
+JOIN actor
+ON actor.act_id = movie_cast.act_id
+WHERE actor.act_fname = 'Claire' AND actor.act_lname = 'Danes';
 
 /*
 18. From the following table, write a SQL query to find for actors whose films have been
