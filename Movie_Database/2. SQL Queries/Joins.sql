@@ -291,7 +291,18 @@ WHERE rev_stars = (
     Return the title, year, and rating.
 Table References: movie, genres, movie_genres, rating
 */
-
+SELECT mov_title, mov_year, rev_stars
+FROM movie 
+NATURAL JOIN movie_genres 
+NATURAL JOIN genres 
+NATURAL JOIN rating
+WHERE gen_title = 'Mystery' AND rev_stars >= ALL (
+	SELECT rev_stars
+	FROM rating 
+	NATURAL JOIN movie_genres 
+	NATURAL JOIN genres
+	WHERE gen_title = 'Mystery'
+);
 
 /*
 23. From the following tables, write a SQL query to find the years when most of the 'Mystery
